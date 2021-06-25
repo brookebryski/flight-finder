@@ -3,8 +3,8 @@ class CreateReviews < ActiveRecord::Migration[6.0]
     create_table :reviews do |t|
       t.string :title
       t.string :description
-      t.integer :sccore
-      t.belongs_to :airline, null: false, foreign_key: true
+      t.integer :score
+      t.belongs_to :airline, foreign_key: true
 
       t.timestamps
     end

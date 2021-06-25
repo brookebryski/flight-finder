@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_25_194829) do
+ActiveRecord::Schema.define(version: 2021_06_25_201953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "airlines", force: :cascade do |t|
     t.string "name"
-    t.string "image_url"
     t.string "slug"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 2021_06_25_194829) do
   create_table "reviews", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.integer "sccore"
-    t.bigint "airline_id", null: false
+    t.integer "score"
+    t.bigint "airline_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["airline_id"], name: "index_reviews_on_airline_id"

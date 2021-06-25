@@ -1,4 +1,4 @@
-Airline.create([
+airlines = Airline.create([
   { 
     name: "United Airlines",
     image_url: "https://open-flights.s3.amazonaws.com/United-Airlines.png"
@@ -23,4 +23,19 @@ Airline.create([
     name: "American Airlines",
     image_url: "https://open-flights.s3.amazonaws.com/American-Airlines.png" 
   }
+])
+
+reviews = Review.create([
+    {
+        title: 'Wonderful!',
+        description: 'I love this airline!',
+        score: 5,
+        airline: airlines.first
+    },
+    {
+        title: 'I am not a fan.',
+        description: 'I did not enjoy my experience with this airline',
+        score: 1,
+        airline: airlines.first
+    }
 ])
